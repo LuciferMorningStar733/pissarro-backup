@@ -59,6 +59,21 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Product characteristics
 PRODUCT_CHARACTERISTICS := default
 
+# [DNM] Temp permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/permissions/xyz.extras.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/xyz.extras.xml \
+    $(LOCAL_PATH)/permissions/xyz.extras.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/xyz.extras.xml 
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0_system \
+    android.hidl.manager@1.0_system \
+    android.hidl.memory.block@1.0.vendor \
+    android.hidl.memory.block@1.0 \
+    libhwbinder \
+    libhwbinder.vendor \
+    libhidltransport.vendor
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.emmc \
